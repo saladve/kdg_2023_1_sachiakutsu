@@ -1,0 +1,158 @@
+body {
+    font-family: "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    background-image:
+    repeating-linear-gradient(to bottom,
+      transparent 25px,
+      rgba(0, 0, 0, 0.04) 26px,  rgba(0, 0, 0, 0.04) 26px,
+      transparent 27px,  transparent 51px, 
+      rgba(0, 0, 0, 0.04) 52px,  rgba(0, 0, 0, 0.04) 52px,
+      transparent 53px,  transparent 77px, 
+      rgba(0, 0, 0, 0.04) 78px,  rgba(0, 0, 0, 0.04) 78px,
+      transparent 79px,  transparent 103px, 
+      rgba(0, 0, 0, 0.04) 104px,  rgba(0, 0, 0, 0.04) 104px,
+      transparent 105px,  transparent 129px, 
+      rgba(0, 0, 0, 0.04) 130px,  rgba(0, 0, 0, 0.04) 130px),
+ 
+    repeating-linear-gradient(to right,
+      transparent 25px,
+      rgba(0, 0, 0, 0.04) 26px,  rgba(0, 0, 0, 0.04) 26px,
+      transparent 27px,  transparent 51px, 
+      rgba(0, 0, 0, 0.04) 52px,  rgba(0, 0, 0, 0.04) 52px,
+      transparent 53px,  transparent 77px, 
+      rgba(0, 0, 0, 0.04) 78px,  rgba(0, 0, 0, 0.04) 78px,
+      transparent 79px,  transparent 103px, 
+      rgba(0, 0, 0, 0.04) 104px,  rgba(0, 0, 0, 0.04) 104px,
+      transparent 105px,  transparent 129px, 
+      rgba(0, 0, 0, 0.04) 130px,  rgba(0, 0, 0, 0.04) 130px);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: solid 1px rgb(215, 26, 73); 
+    background-color: white;
+}
+
+.navc {
+    font-weight: bold;
+    color: rgb(215, 26, 73);
+}
+
+.red {
+    color: rgb(215, 26, 73);
+}
+
+.color {
+    background-color: rgb(215, 26, 73);
+}
+
+a {
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.cardtitle {
+    height: 50px;
+}
+
+.listcard {
+    width : 250px;
+    height: 250px;
+}
+
+.listup {
+    justify-content: space-around;
+    height: 20px;
+    margin-bottom: 20px;
+}
+
+.categorybadge {
+    background-color: rgb(215, 26, 73);
+    color: white;
+}
+
+.signup {
+    width : calc(100% / 3);
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.redb {
+    border: none;
+    background-color: rgb(215, 26, 73);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 40px;
+    margin: auto;
+    height: 45px;
+}
+
+.redb2 {
+    border: 2px solid rgb(215, 26, 73);
+    background-color: white;
+    color: rgb(215, 26, 73);
+    border-radius: 10px;
+    padding: 12px 40px;
+    font-size: 17px;
+    margin: auto;
+    height: 45px;
+}
+
+.redb3 {
+    border: 2px solid rgb(215, 26, 73);
+    background-color: white;
+    color: rgb(215, 26, 73);
+    border-radius: 10px;
+    padding: 12px 40px;
+    margin: auto;
+    height: 45px;
+}
+
+.choise {
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+.int {
+    text-align: center;
+    margin: 40px;
+    font-weight: bolder;
+}
+
+.commentup {
+    border-top: 1px solid rgb(205, 205, 205);
+    padding: 25px 10px 0;
+    justify-content: space-around;
+}
+
+footer {
+    margin: 100px 0 0;
+    padding: 2em 1em;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    height: 150px;
+    text-align: center;
+    background: -moz-linear-gradient(#ff3c5c, #ff708d);
+    background: -webkit-linear-gradient(#ff3c5c, #ff708d);
+    background: linear-gradient(to right, #ff3c5c, #ff708d);
+    color: #FFF;
+}
+
+h4 {
+    text-align: center;
+    margin: 20px;
+}

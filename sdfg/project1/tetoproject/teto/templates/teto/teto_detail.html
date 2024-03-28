@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+
+{% block title %}{{ item.title }}{% endblock %}
+
+{% block content%}
+    <div class="card shadow bg-white mx-auto"
+    style="padding: 20px; width: 700px; margin-top: 50px; border: 1px solid rgb(215, 26, 73);">
+        <div class="card-body">
+            <div class="flex listup">
+                <p style="color: #727272;">投稿者 : {{ object.user }}</p>
+                <p style="color: #727272;">投稿時間 : {{ object.create_time | date:'y/m/d H:i' }}</p>
+                <span class="badge categorybadge">#{{ object.category }}</span>
+                <a class="badge" href="{% url 'postdelete' object.pk %}">削除</a>
+            </div>
+            <h5 class="card-title" style="border-top: 1px solid rgb(205, 205, 205); padding-top: 20px;">{{ object.music}}</h5>
+            <p class="card-text">{{ object.title }}</p>
+            <p class="card-text" style="border: 1px solid #b5b5b5; border-radius: 5px; padding: 10px;">{{ object.text }}</p>
+            <a href="{{ item.link }}" class="btn btn-outline-danger"><i class="bi bi-headphones"></i> 曲を聴いてみる</a>
+            <a href="{% url 'postcomment' object.pk %}" class="btn btn-outline-danger"><i class="bi bi-chat-left"></i> コメントをする</a>
+            <p style="border-bottom: 1px solid rgb(205, 205, 205); padding-bottom: 20px;"></p>
+        </div>
+        <div style="padding: 0 20px 20px;">
+            <h3>コメント</h3>
+            {% for comment in object.comment_set.all %}
+            <div class="balloon-007">
+                <div class="flex commentup" >
+                    <p style="color: #727272;">投稿者 : {{ comment.user.username }}</p>
+                    <p style="color: #727272;"">投稿時間 : {{ comment.create_time | date:'y/m/d H:i' }}</p>
+                </div>
+                <p style="margin: 0 30px 15px;">{{ comment.text }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

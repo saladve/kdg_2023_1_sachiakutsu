@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}投稿削除{% endblock %}
+
+{% block content %}
+<h2 style="text-align: center; margin: 100px 0 0;">この投稿を削除しますか？</h2>
+<div class="card shadow bg-white mx-auto"
+    style="padding: 20px; width: 700px; margin-top: 50px; border: 1px solid rgb(215, 26, 73);">
+        <div class="card-body">
+            <div class="flex listup">
+                <p>投稿者 : {{ object.user }}</p>
+                <span class="badge categorybadge">#{{ object.category }}</span>
+                <p>投稿時間 : {{ object.create_time }}</p>
+            </div>
+            <h5 class="card-title">{{ object.title }}</h5>
+            <p class="card-text">{{ object.text }}</p>
+            <a href="{{ item.link }}" class="btn btn-outline-danger"><i class="bi bi-headphones"></i>曲を聴いてみる</a>
+        </div>
+</div>
+<div class="flex choise" style="margin: 40px;">
+    <form method="post">{% csrf_token %}
+        <button type="submit" class="redb">削除する</button>
+        <a href="{{request.META.HTTP_REFERER}}" class="redb2">戻る</a>
+    </form>
+</div>
+
+{% endblock %}

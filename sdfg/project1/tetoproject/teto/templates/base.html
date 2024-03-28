@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="../../../../favicon.ico">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <style>
+          .bi-chevron-compact-right{
+              font-size:50px;
+              color:rgb(200, 200, 200);
+          }
+      </style>
+        <title>TETOWEB</title>
+        
+        <!--Template based on URL below-->
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
+    
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+        <!-- Place your stylesheet here-->
+        <title>{% block title %}{% endblock %} | テトミュージック</title> 
+
+        <link rel="stylesheet" type="text/css" href="{% static 'teto/css/style.css' %}">
+    </head>
+    <body>
+      <nav class="navbar sticky-top nav">
+        <a class="navbar-brand navc" href="{% url 'index' %}">テトミュージック</a>
+        <a class="nav-link mx-3 navc" href="{% url 'postcreate' %}">投稿をする</a>
+        <a class="nav-link mx-3 navc" href="{% url 'postlist' %}">投稿を見る</a>
+        {% if request.user.is_authenticated %}
+          <div class="navc">
+            <a class="navbar-brand mx-3 red" href="{% url 'accounts:logout' %}">ログアウト</a>｜
+            <a class="navbar-brand mx-3 red" href="{% url 'profile' %}">プロフィール</a>
+        </div>
+      </nav>
+      {% else %}
+        <div class="navc">
+          <a class="navbar-brand mx-3 red" href="{% url 'accounts:login' %}">ログイン</a>｜　
+          <a class="navbar-brand mx-3 red" href="{% url 'accounts:signup' %}">サインイン</a>
+        </div>
+      </nav>
+      {% endif %}
+      <main>
+        {% block content %}
+        {% endblock content %}
+      </main>
+    </body>
+</html>

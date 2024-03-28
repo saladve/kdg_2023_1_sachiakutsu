@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}投稿作成{% endblock %}
+
+{% block content %}
+<form method="post" class="rounded form-group shadow bg-white mx-auto"
+    style="padding: 20px 40px; width: 600px; margin-top: 50px; border: 1px solid rgb(215, 26, 73);">
+    {% csrf_token %}
+    <h1 style="text-align: center; margin: 15px 0 30px;">投稿作成</h1>
+ 
+    <input type="text" name="title" class="form-control" required placeholder="見出しを入力" style="margin: 10px auto; width: 500px;">
+    <input type="text" name="music" class="form-control" required placeholder="楽曲名を入力" style="margin: 10px auto; width: 500px;">
+    <input type="text" name="text" class="form-control" required placeholder="内容を入力" style="margin: 10px auto; width: 500px;">
+    <input type="url" name="link" class="form-control" required placeholder="リンク" style="margin: 10px auto; width: 500px;">
+    <div class="choise flex" style="margin-top: 30px;">
+        <label style="color: #545454;">感想
+            <input type="radio" required name="category" class="form-control" value="感想" style="margin: 10px 0 ;">
+        </label>
+        <label style="color: #545454;">宣伝
+            <input type="radio" name="category" class="form-control" value="宣伝" style="margin: 10px 0 ;">
+        </label>
+    </div>
+    
+    <input type="submit" class="btn categorybadge m-2" value="投稿する" style="width: 100%;">
+</form>
+{% endblock content %}

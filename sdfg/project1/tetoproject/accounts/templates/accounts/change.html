@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}ユーザー情報変更{% endblock %}
+
+{% block content %}
+<form method="post" class="rounded form-group shadow bg-white mx-auto"
+style="padding: 20px; width: 600px; margin-top: 50px; border: 1px solid rgb(215, 26, 73);">
+    {% csrf_token %}
+    <h2 style="text-align: center; margin: 15px 0 30px;">ユーザー情報変更</h2>
+    <input type="text" name="username" class="form-control" placeholder="ユーザーネームを入力" style="margin: 10px auto; width: 550px;">
+    {% if form.errors %}
+    <span class="small text-danger text-start">利用できないユーザーネーム</span>
+    {% endif %}
+    <button type="submit"class="btn categorybadge m-2" style="width: 100%;">変更</button>
+</form>
+{% endblock %}

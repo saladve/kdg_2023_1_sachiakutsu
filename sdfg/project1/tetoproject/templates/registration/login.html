@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post" class="rounded form-group shadow bg-white mx-auto"
+style="padding: 20px; width: 600px; margin-top: 50px; border: 1px solid rgb(215, 26, 73);">
+    {% csrf_token %}
+    <h1 style="text-align: center; margin: 15px 0 30px;">ログイン</h1>
+    {% for error in form.errors.values %}
+    {{ error }}
+    {% endfor %}
+    <input type="text" class="form-control" name="username" placeholder="ユーザーネームを入力" style="margin: 10px auto; width: 550px;">
+    <input type="password" class="form-control" name="password" placeholder="パスワードを入力" style="margin: 10px auto; width: 550px;">
+    <button type="submit" class="btn categorybadge m-2" style="width: 100%;">ログイン</button>
+</form>
+{% endblock %}

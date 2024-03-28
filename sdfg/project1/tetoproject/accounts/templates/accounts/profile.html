@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+
+{% block title %}プロフィール{% endblock %}
+
+{% block content %}
+
+<div class="rounded form-group shadow bg-white mx-auto"
+style="padding: 20px; width: 600px; margin-top: 50px; border: 1px solid rgb(215, 26, 73);">
+  <div class="card-body">
+    <h5 class="card-title text-center">プロフィール</h5>
+    <table class="profile_table mb-4">
+      <tbody>
+        <tr>
+          <div class="flex listup">
+          <th class="header">ユーザーネーム : </th>
+          <td class="data">{{ user.username }}</td>
+          <p>{{ user.signup_at }}</p>
+        </div>
+        </tr>
+      </tbody>
+    </table>
+    <a button type="submit"class="btn categorybadge m-2" style="width: 100%;" href="{% url 'accounts:change' %}">ユーザー情報変更</a>
+  </div>
+</div>
+
+{% endblock %}

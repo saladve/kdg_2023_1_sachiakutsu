@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}ホーム{% endblock %}
+
+{% block content %}
+<div class="int">
+    <h2>TETO FAN SITE</h2>
+    <p>重音テト楽曲　交流サイト</p>
+</div>
+<div style="margin: 200px 400px;">
+    <h4>さっそく</h3>
+    <a class="btn redb" style="width: 100%;" href="{% url 'postlist' %}" >投稿を見にいく</a>
+    <h4>サインイン済みなら</h4>
+    <a class="btn redb3" style="width: 100%; padding: 8px 0 0;" href="{% url 'postcreate' %}">投稿をする</a>
+</div>
+<img src="/media/tetologo.png">
+{% load static %}
+<img src="{% static "/media/tetologo.png"%}">
+
+
+{% endblock content %}
